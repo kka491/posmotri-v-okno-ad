@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -47,5 +47,365 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 1fr;
+  grid-template-rows: 1fr;
+  inline-size: 1140px;
+  margin: auto;
+  gap: 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.result__video-container {
+  position: relative;
+}
+
+.result__video {
+  inline-size: 100%;
+  block-size: 100%;
+  max-height: 386px;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-form__fieldset {
+  border: none;
+  padding: 0;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  margin-block-end: 8px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.search-form__textfield {
+  appearance: none;
+  border: none;
+  border-block: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  inline-size: 225px;
+  block-size: 27px;
+  padding: 0;
+  outline: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  border-block-color: #d9d9d9;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 20px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  inline-size: 18px;
+  block-size: 18px;
+  border: 1px solid #ffffff;
+  flex-shrink: 0;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  inline-size: 12px;
+  block-size: 12px;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  border-color: #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible)
+  .search-form__pseudo-checkbox {
+  outline: 1px solid #d9d9d9;
+  outline-offset: 2px;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label-text {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  color: #6b6b6b;
+}
+
+.button:focus-visible {
+  outline: 1px solid #d9d9d9;
+  outline-offset: 2px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.search-form__submit-button {
+  inline-size: 160px;
+  block-size: 34px;
+}
+
+.more-button {
+  inline-size: 100%;
+  block-size: 34px;
+  margin-top: 30px;
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  overflow-y: auto;
+  block-size: 298px;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+  padding-inline: 3px;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content__card-link:hover .content__video-card-title {
+  text-decoration: underline;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #d9d9d9;
+  outline-offset: 4px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link_current {
+  background-color: rgb(217 217 217 / 5%);
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-block: 4px;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  max-width: 196px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-inline-size: 0;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.result__video-container {
+  position: relative;
+}
+
+.content__list-container {
+  position: relative;
+}
+
+.preloader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27 25 25 / 80%);
+  z-index: 10;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 100%;
+}
+
+.error__title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #9b9b9b;
+  text-align: center;
+}
+
+.preloader-chasing-squares {
+  position: relative;
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.square {
+  position: absolute;
+  inline-size: 16px;
+  block-size: 16px;
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.square:nth-child(1) {
+  top: 0;
+  left: 0;
+  animation: chasing-square 0.8s infinite ease-in-out;
+}
+
+.square:nth-child(2) {
+  top: 0;
+  right: 0;
+  animation: chasing-square 0.8s infinite ease-in-out 0.2s;
+}
+
+.square:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  animation: chasing-square 0.8s infinite ease-in-out 0.4s;
+}
+
+.square:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  animation: chasing-square 0.8s infinite ease-in-out 0.6s;
 }
